@@ -1,3 +1,13 @@
 Hello
 <span>Photo by <a href="https://unsplash.com/@adrigeo_?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">adrianna geo</a> on <a href="https://unsplash.com/s/photos/art?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
 <span>Photo by <a href="https://unsplash.com/@boudewijn_huysmans?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Boudewijn Huysmans</a> on <a href="https://unsplash.com/s/photos/manuscript?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+<ul>
+{%- for imageFile in collections.manifestGenerator -%}
+  <li>{%- if imageFile.data.folder and imageFile.data.folder != "" -%}
+    <a href="images/{{ imageFile.data.folder }}/">{{ imageFile.data.folder }}</a>
+      {%- endif -%}</li>
+{%- endfor -%}
+</ul>
+if hmmlURL != "https://hmml-images.netlify.app"
+  image "./images/"+folder+"/"+image, Title
+endif

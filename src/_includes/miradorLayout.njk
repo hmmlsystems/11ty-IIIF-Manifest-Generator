@@ -1,0 +1,45 @@
+---
+title: Mirador Viewer
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <title>Mirador Viewer</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+
+  </head>
+  <body>
+    <div id="mirador" style="position: absolute; top: 0; bottom: 0; left: 0; right: 0;"></div>
+    <script>document.write("<script type='text/javascript' src='https://unpkg.com/mirador@latest/dist/mirador.min.js'><\/script>");</script>
+    <script type="text/javascript">
+      var miradorInstance = Mirador.viewer({
+        id: 'mirador',
+        windows: [{
+          loadedManifest: '{{siteURL}}/images/{{folder}}/manifest.json',
+        }],
+        window: {
+          views: [
+            { key: 'single', behaviors: ['individuals'] }
+          ]
+        },
+        selectedTheme:'light',
+        themes: {
+           light: {
+             palette: {
+               type: 'light',
+               primary: {
+                 main: '#db2845',
+               },
+             },
+           },
+        },
+        thumbnailNavigation: {
+          displaySettings: false
+        }
+      });
+    </script>
+  </body>
+</html>

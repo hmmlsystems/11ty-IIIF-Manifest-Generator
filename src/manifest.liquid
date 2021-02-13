@@ -1,0 +1,65 @@
+---
+pagination:
+  data: collections.manifestGenerator
+  size: 1
+  alias: manifest
+permalink: "images/{{manifest.data.folder}}/manifest.json"
+---
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "{{siteURL}}/images/{{manifest.data.folder}}/manifest.json",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "{{manifest.data.label}}"
+    ]
+  },
+  "metadata": [
+    {
+      "label": {
+        "en": [
+          "Description"
+        ]
+      },
+      "value": {
+        "none": [
+          "<span>{{manifest.data.description}}</span>"
+        ]
+      }
+    }
+  ],
+  "rights": "{{manifest.data.rights}}",
+  "items": [
+    {
+      "id": "{{siteURL}}/images/{{manifest.data.folder}}/canvas/p1",
+      "type": "Canvas",
+      "height": 1800,
+      "width": 1200,
+      "items": [
+        {
+          "id": "{{siteURL}}/images/{{manifest.data.folder}}/page/p1/1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "{{siteURL}}/images/{{manifest.data.folder}}/annotation/p0001-image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                {%- for image in manifest.data.images -%}
+                  {% if forloop.first %}
+                    "id": "{{siteURL}}/images/{{manifest.data.folder}}/{{image}}",
+                  {%- endif -%}
+                {%- endfor -%}
+                "type": "Image",
+                "format": "image/jpg",
+                "height": 1800,
+                "width": 1200
+              },
+              "target": "{{siteURL}}/images/{{manifest.data.folder}}/canvas/p1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
