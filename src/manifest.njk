@@ -1,0 +1,61 @@
+---
+pagination:
+  data: collections.manifestGenerator
+  size: 1
+  alias: manifest
+permalink: "images/{{manifest.data.folder}}/manifest.json"
+---
+{
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "@id": "{{siteURL}}/images/{{manifest.data.folder}}/manifest.json",
+  "@type": "sc:Manifest",
+  "label": "{{manifest.data.label}}",
+  "metadata": [
+    {
+      "label": "Description",
+      "value": "<span>{{manifest.data.description | safe}}</span>"
+    }
+  ],
+  "rights": "{{manifest.data.rights}}",
+  "viewingDirection": "left-to-right",
+  "sequences": [
+    {
+      "@id": "{{siteURL}}/sequence/1",
+      "@type": "sc:Sequence",
+      "canvases": [
+      {%- for image in manifest.data.images -%}
+        {
+          "@id": "{{siteURL}}/images/{{manifest.data.folder}}/canvas/{{ loop.index }}",
+          "@type": "sc:Canvas",
+          "label": "{{image}}",
+          {% if siteURL != "https://yoururl.netlify.app" %}
+            {% imageGen "./images/"+manifest.data.folder+"/"+image, manifest.data.folder, manifest.data.label %}
+          {%- endif -%}
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "on": "{{siteURL}}/images/{{manifest.data.folder}}/canvas/{{ loop.index }}",
+              "resource":
+                {
+                  "@id": "{{siteURL}}/images/{{manifest.data.folder}}/{{image}}",
+                  "@type": "dctypes:Image"
+                }
+              }
+            ],
+            "thumbnail": [{
+              "id": "{{siteURL}}/images/{{manifest.data.folder}}/sm-{{image}}",
+              "type": "Image",
+              "format": "image/jpeg",
+              "height": 150
+            }],
+            "metadata": [{
+              "label": "Name",
+              "value": "{{image}}"
+            }]
+        }{%- if loop.last -%}{% else %},{%- endif -%}
+        {%- endfor -%}
+      ]
+    }
+  ]
+}
