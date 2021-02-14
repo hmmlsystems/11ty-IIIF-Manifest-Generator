@@ -6,7 +6,7 @@ pagination:
 permalink: "images/{{manifest.data.folder}}/manifest.json"
 ---
 {
-  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "@context": "https://iiif.io/api/presentation/2/context.json",
   "@id": "{{siteURL}}/images/{{manifest.data.folder}}/manifest.json",
   "@type": "sc:Manifest",
   "label": "{{manifest.data.label}}",
@@ -17,6 +17,7 @@ permalink: "images/{{manifest.data.folder}}/manifest.json"
     }
   ],
   "rights": "{{manifest.data.rights}}",
+  "logo": "https://vhmml.org/static/img/hmml-logo.png",
   "viewingDirection": "left-to-right",
   "sequences": [
     {

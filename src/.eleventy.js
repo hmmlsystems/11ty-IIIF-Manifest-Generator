@@ -11,7 +11,8 @@ module.exports = function(eleventyConfig) {
     "liquid",
     "html",
     "jpg",
-    "ico"
+    "ico",
+    "toml"
   ]);
 };
 
