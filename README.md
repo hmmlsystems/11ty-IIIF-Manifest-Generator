@@ -127,6 +127,14 @@ Quotes can also cause a problem, especially if you have quotes within quotes. In
 
 Currently the application works with JPG image files only.
 
+Folder names and image names should be URL friendly
+
+<image this not this>
+
+Subfolders aren't allowed. Keep your folders under the /images folder
+
+<image this not this>
+
 ## Other information
 
 **What’s the netlify.toml file doing?** This file allows other sites to see and use your manifest files. It has to do with CORS. Basically, most websites try to protect their content by not letting others use it. In our case, we want them to use it. If you want you can read more about [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) or the [netlify.toml file](https://docs.netlify.com/configure-builds/file-based-configuration/#headers).
