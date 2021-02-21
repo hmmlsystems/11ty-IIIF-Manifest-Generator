@@ -1,99 +1,103 @@
 # 11ty IIIF Manifest Generator
 
-MENU HERE
+MENU HERE???
 
 ## TL;DR
 Too busy to read? Here are some simple instructions to get started.
 In bulleted list. Add a folder with your images, describe them, build, deploy.
 
 ## Description
-Using this program and the below process, you can generate a IIIF manifest for an image or images, deploy them to the web, and share or use them around the web. All without deploying your own [IIIF Image Server](https://iiif.io/apps-demos/#image-servers).  
+Using this program and the below process, you can generate a IIIF manifest (Level 0) for an image or images, deploy them to the web, and share or use around the web. All without deploying your own [IIIF Image Server](https://iiif.io/apps-demos/#image-servers).  
 
-The program utilizes the power of the [11ty](https://www.11ty.dev/) static site generator (SSG) and the [11ty Image plugin](https://www.11ty.dev/docs/plugins/image/) to generate an overview page, a separate Mirador 3 Viewer page for each set of images, and a IIIF manifest for each set of images.
+The program utilizes the power of [11ty](https://www.11ty.dev/), a static site generator (SSG), and the [11ty Image plugin](https://www.11ty.dev/docs/plugins/image/) to generate an overview page, a separate Mirador 3 IIIF Image Viewing Client page for each image(s) set, and a IIIF manifest for each image(s) set.
 
-<<Image>>
+![results of program](/docs/11ty-iiif-final-list.png "results of program")
 
 ## Requirements
-The goal of this project was to create a simple process to generate these manifests on the web without a IIIF image server. You will need a [Netlify account](https://www.netlify.com/), a computer, and some basic knowledge of working on the command line. Each step along the way is documented to provide help and guidance along the way.
+The goal of this project was to create a relatively simple process to generate IIIF Level 0 manifests on the web without a IIIF image server. You will need a [Netlify account](https://www.netlify.com/), a computer, and some basic knowledge of working on the command line. Each step is documented to provide help and guidance along the way.
 
 ## Assumptions
 We’re assuming you know what [IIIF](https://iiif.io/) is and why you may want a manifest for an image(s). The process also assumes some familiarity with the [Mirador 3 IIIF Image Viewing Client](https://projectmirador.org/).
 
-<<image>>
-
 ## Installation
-First you need the Node and NPM applications. These can both be installed via the [Nodejs.org LTS installation](https://nodejs.org/en/). Follow the installation instructions. Once installed, confirm that they are working by asking your computer what version of Node and NPM you have (node -v and npm -v). If it is able to tell you a version, they are installed correctly.
+First you need the Node and NPM applications. These can both be installed via the [Nodejs.org LTS installation](https://nodejs.org/en/). Follow the installation instructions. Once installed, confirm that they are working by asking your computer what version of Node and NPM you have (`node -v` and `npm -v`). If it is able to tell you a version, they are installed correctly.
 
-<<image>>
+![node and npm](/docs/node-npm.png "node and npm")
 
-Next, download the ZIP of the Github repository. If you are adept at Git, you can also clone the repository.
+Next, download the ZIP of this [Github repository](). If you are adept at Git, you could also clone the repository.
 
-<image>
+![download code](/docs/download-code-github.png "download code")
 
-Extract or unzip the file
+Extract or unzip the download file.
 
-<image>
+![extract download](/docs/extract-download.png "extract download")
 
-Navigate to the /11ty-IIIF-Manifest-Generator/src/ directory.
+In Terminal, navigate to the `/11ty-IIIF-Manifest-Generator/src/` directory.
 
-<image>
+![terminal](/docs/terminal-src.png "terminal")
 
-Next install the application using npm install.
+Next install the application using `npm install`.
 
-<image>
+![npm installing](/docs/npm-install-1.png "npm installing")
 
-> What is this doing? Basically, the application needs other things to help it do what it wants to do (11ty and 11ty Image Plugin). With the NPM install command, your computer is going out to the web, getting them, and installing them on your computer. They are only being installed to this /src directory and you can see their folders and files in the node_modules directory. You’ll never have to word about these files but just know that they are there to help build your site.
+> **What is this doing?** Basically, the application needs other things to help it do what it wants to do (11ty and 11ty Image Plugin). With the NPM install command, your computer is going out to the web, getting these programs, and installing them on your computer. They are only being installed to this /src directory and you can see their folders and files in the node_modules directory. You’ll never have to worry about these files but just know that they are there to help build your site.
 
-With the application installed, you can run npx @11ty/eleventy to generate or build your site.
+![npm installed](/docs/npm-install-2.png "npm installed")
 
-<image>
+With the application installed, you can run `npx @11ty/eleventy` to generate or build your site. You will also see a list of files that 11ty has generated for you.
 
-> What is this doing? This command is asking 11ty to build your site from the files that are already in the project. The application is ‘seeded’ with 3 examples: a single image, a multiple image, and a fully detailed, multiple image example.
+![build site with 11ty](/docs/run-11ty.png "build site with 11ty")
+
+> **What is this doing?** This command is asking 11ty to build your site from the files that are already in the project. The application is ‘seeded’ with 3 examples: a single image, multiple images, and a fully detailed with multiple images example. For reference, you can find these in the `/src/images/` folder.
 >
-> <image of project code>
->
-> This command takes the information in each folder’s index.html file and uses it to build the main site’s page with a list of separate image folders, a Mirador 3 Viewer page for each folder, a manifest.json file for each folder, and thumbnails of each image.
->
-> <image of finished site>
->
-> You will also see a list of files that 11ty has generated for you.
+> The `npx @11ty/eleventy` command takes the information in each folder’s index.html file and uses it to build the main site’s page with a list of separate image folders, a Mirador 3 Viewer page for each folder, a manifest.json file for each folder, and thumbnails of each image. For reference, you can find the 'compiled' site in the `/src/_site/` folder.
 
-<image>
+To view your site locally, change the `/src/_data/siteURL.json` file to “http://localhost:8080”. Then use the `npx @11ty/eleventy --serve` command. The “-- serve” asks 11ty to also create a webserver in memory so you can see your application.
 
-To view your site locally, change the /src/_data/siteURL.json file to “http://localhost:8080”. Then use the npx @11ty/eleventy --serve command. The “-- serve” asks 11ty to also create a webserver so you can see your application.
+![11ty serve terminal](/docs/11ty-serve-terminal.png "11ty serve terminal")
 
-<images - terminal and browser>
+And here is the application.
 
-To quit the 11ty serve command, press control+c in the terminal.
+![11ty serve browser](/docs/11ty-serve-browser.png "11ty serve browser")
 
-Next, login to your Netlify account. Then visit <https://app.netlify.com/drop> and drag your “_site” folder into the box in your browser.
+FYI, to quit the 11ty serve command, press control+c in the terminal.
 
-<gif>
+Next, login to your Netlify account. Then visit <https://app.netlify.com/drop> and drag your `src/_site` folder into the box in your browser.
 
-> What is this doing? Netlify will publish the static assets that the application created. They will give you a URL and host the pages.
->
-> <image>
+![Netlify Deploy](/docs/netlify-deploy.gif "Netlify Deploy")
 
-With your pages deployed, if you want you can change the URL to something more meaningful.
+> **What is this doing?** Netlify will publish the static assets that the application created. They will give you a URL and host the pages.
 
-<image>
+![Netlify Site Deploy](/docs/netlify-deploy-site.png "Netlify Site Deploy")
 
-But, in order for our application to work we need to take this new URL and put it in as the siteURL.
+With your pages deployed, if you want you can change the URL to something more meaningful. Click the "Site Settings" button.
 
-<image>
+![site settings](/docs/site-settings.png "site settings")
 
-Now, rebuild your site and deploy again.
+Next, click the "Change site name" button.
 
-<image>
+![Change site name](/docs/change-site-name.png "Change site name")
 
-Click on the site URL and you should see the overview page. This is a quick list of all the image sets the application created.
+Save, and you should have your new site URL.
 
-You can open the Mirador page or send the link to friends. The manifest URL can also be used elsewhere in Mirador 3 viewers. For example, [Mirador par Biblissima](https://iiif.biblissima.fr/mirador3/?theme=light) or
+![New Site Name](/docs/new-site-name.png "New Site Name")
+
+Because the IIIF manifest needs the new URL to work, and in order for our website to work, we need to take this new URL and put it in as the siteURL. This will make sure that the application knows where it lives on the web.
+
+![siteURL](/docs/siteURL.png "siteURL")
+
+Now, rebuild your site (`npx @11ty/eleventy`) and deploy again. To deploy this time, click the deploy option in your menu and drag your `src/_site` folder into the box in your browser.
+
+![Netlify Deploys for existing site](/docs/site-deploys-optionL.png "Netlify Deploys for existing site")
+
+Once the site has been built and processed, click on the site URL and it should open an new browser tab with your site - the overview page. This is a quick list of all the image sets the application created.
+
+You can open the Mirador page (click on the single Mirador link) or even send the link to friends, students, or scholars. The manifest URL can also be used elsewhere but only in Mirador 3 viewers. For example, [Mirador par Biblissima](https://iiif.biblissima.fr/mirador3/?theme=light) or
 [Project Mirador](https://mirador-dev.netlify.app/__tests__/integration/mirador/)
 
 ## Adding your own images
 
-To add your own image files, first begin by creating a folder under /src/images/. Make sure its URL friendly with now spaces or special characters.
+To add your own image files, first begin by creating a folder under `/src/images/`. Make sure its URL friendly with now spaces or special characters.
 
 <image>
 Copy the index.html from the full directory and paste it in this directory.
