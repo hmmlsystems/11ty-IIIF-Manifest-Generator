@@ -11,7 +11,7 @@ Using this program and the below process, you can generate a IIIF manifest (Leve
 
 The program utilizes the power of [11ty](https://www.11ty.dev/), a static site generator (SSG), and the [11ty Image plugin](https://www.11ty.dev/docs/plugins/image/) to generate an overview page, a separate Mirador 3 IIIF Image Viewing Client page for each image(s) set, and a IIIF manifest for each image(s) set.
 
-![results of program](/src/docs/11ty-iiif-final-list.png "results of program")
+<img src="/src/docs/11ty-iiif-final-list.png" alt="results of program" style="height:450px">
 
 ## Requirements
 The goal of this project was to create a relatively simple process to generate IIIF Level 0 manifests on the web without a IIIF image server. You will need a [Netlify account](https://www.netlify.com/), a computer, and some basic knowledge of working on the command line. Each step is documented to provide help and guidance along the way.
@@ -22,7 +22,7 @@ We’re assuming you know what [IIIF](https://iiif.io/) is and why you may want 
 ## Installation
 First you need the Node and NPM applications. These can both be installed via the [Nodejs.org LTS installation](https://nodejs.org/en/). Follow the installation instructions. Once installed, confirm that they are working by asking your computer what version of Node and NPM you have (`node -v` and `npm -v`). If it is able to tell you a version, they are installed correctly.
 
-![node and npm](/src/docs/node-npm.png "node and npm")
+<img src="/src/docs/node-npm.png" alt="node and npm" style="height:200px">
 
 Next, download the ZIP of this [Github repository](). If you are adept at Git, you could also clone the repository.
 
