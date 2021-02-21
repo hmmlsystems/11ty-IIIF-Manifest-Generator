@@ -11,7 +11,7 @@ Using this program and the below process, you can generate a IIIF manifest (Leve
 
 The program utilizes the power of [11ty](https://www.11ty.dev/), a static site generator (SSG), and the [11ty Image plugin](https://www.11ty.dev/docs/plugins/image/) to generate an overview page, a separate Mirador 3 IIIF Image Viewing Client page for each image(s) set, and a IIIF manifest for each image(s) set.
 
-![results of program](/docs/11ty-iiif-final-list.png "results of program")
+![results of program](/src/docs/11ty-iiif-final-list.png "results of program")
 
 ## Requirements
 The goal of this project was to create a relatively simple process to generate IIIF Level 0 manifests on the web without a IIIF image server. You will need a [Netlify account](https://www.netlify.com/), a computer, and some basic knowledge of working on the command line. Each step is documented to provide help and guidance along the way.
@@ -22,31 +22,31 @@ We’re assuming you know what [IIIF](https://iiif.io/) is and why you may want 
 ## Installation
 First you need the Node and NPM applications. These can both be installed via the [Nodejs.org LTS installation](https://nodejs.org/en/). Follow the installation instructions. Once installed, confirm that they are working by asking your computer what version of Node and NPM you have (`node -v` and `npm -v`). If it is able to tell you a version, they are installed correctly.
 
-![node and npm](/docs/node-npm.png "node and npm")
+![node and npm](/src/docs/node-npm.png "node and npm")
 
 Next, download the ZIP of this [Github repository](). If you are adept at Git, you could also clone the repository.
 
-![download code](/docs/download-code-github.png "download code")
+![download code](/src/docs/download-code-github.png "download code")
 
 Extract or unzip the download file.
 
-![extract download](/docs/extract-download.png "extract download")
+![extract download](/src/docs/extract-download.png "extract download")
 
 In Terminal, navigate to the `/11ty-IIIF-Manifest-Generator/src/` directory.
 
-![terminal](/docs/terminal-src.png "terminal")
+![terminal](/src/docs/terminal-src.png "terminal")
 
 Next install the application using `npm install`.
 
-![npm installing](/docs/npm-install-1.png "npm installing")
+![npm installing](/src/docs/npm-install-1.png "npm installing")
 
 > **What is this doing?** Basically, the application needs other things to help it do what it wants to do (11ty and 11ty Image Plugin). With the NPM install command, your computer is going out to the web, getting these programs, and installing them on your computer. They are only being installed to this /src directory and you can see their folders and files in the node_modules directory. You’ll never have to worry about these files but just know that they are there to help build your site.
 
-![npm installed](/docs/npm-install-2.png "npm installed")
+![npm installed](/src/docs/npm-install-2.png "npm installed")
 
 With the application installed, you can run `npx @11ty/eleventy` to generate or build your site. You will also see a list of files that 11ty has generated for you.
 
-![build site with 11ty](/docs/run-11ty.png "build site with 11ty")
+![build site with 11ty](/src/docs/run-11ty.png "build site with 11ty")
 
 > **What is this doing?** This command is asking 11ty to build your site from the files that are already in the project. The application is ‘seeded’ with 3 examples: a single image, multiple images, and a fully detailed with multiple images example. For reference, you can find these in the `/src/images/` folder.
 >
@@ -54,41 +54,41 @@ With the application installed, you can run `npx @11ty/eleventy` to generate or 
 
 To view your site locally, change the `/src/_data/siteURL.json` file to “http://localhost:8080”. Then use the `npx @11ty/eleventy --serve` command. The “-- serve” asks 11ty to also create a webserver in memory so you can see your application.
 
-![11ty serve terminal](/docs/11ty-serve-terminal.png "11ty serve terminal")
+![11ty serve terminal](/src/docs/11ty-serve-terminal.png "11ty serve terminal")
 
 And here is the application.
 
-![11ty serve browser](/docs/11ty-serve-browser.png "11ty serve browser")
+![11ty serve browser](/src/docs/11ty-serve-browser.png "11ty serve browser")
 
 FYI, to quit the 11ty serve command, press control+c in the terminal.
 
 Next, login to your Netlify account. Then visit <https://app.netlify.com/drop> and drag your `src/_site` folder into the box in your browser.
 
-![Netlify Deploy](/docs/netlify-deploy.gif "Netlify Deploy")
+![Netlify Deploy](/src/docs/netlify-deploy.gif "Netlify Deploy")
 
 > **What is this doing?** Netlify will publish the static assets that the application created. They will give you a URL and host the pages.
 
-![Netlify Site Deploy](/docs/netlify-deploy-site.png "Netlify Site Deploy")
+![Netlify Site Deploy](/src/docs/netlify-deploy-site.png "Netlify Site Deploy")
 
 With your pages deployed, if you want you can change the URL to something more meaningful. Click the "Site Settings" button.
 
-![site settings](/docs/site-settings.png "site settings")
+![site settings](/src/docs/site-settings.png "site settings")
 
 Next, click the "Change site name" button.
 
-![Change site name](/docs/change-site-name.png "Change site name")
+![Change site name](/src/docs/change-site-name.png "Change site name")
 
 Save, and you should have your new site URL.
 
-![New Site Name](/docs/new-site-name.png "New Site Name")
+![New Site Name](/src/docs/new-site-name.png "New Site Name")
 
 Because the IIIF manifest needs the new URL to work, and in order for our website to work, we need to take this new URL and put it in as the siteURL. This will make sure that the application knows where it lives on the web.
 
-![siteURL](/docs/siteURL.png "siteURL")
+![siteURL](/src/docs/siteURL.png "siteURL")
 
 Now, rebuild your site (`npx @11ty/eleventy`) and deploy again. To deploy this time, click the deploy option in your menu and drag your `src/_site` folder into the box in your browser.
 
-![Netlify Deploys for existing site](/docs/site-deploys-optionL.png "Netlify Deploys for existing site")
+![Netlify Deploys for existing site](/src/docs/site-deploys-optionL.png "Netlify Deploys for existing site")
 
 Once the site has been built and processed, click on the site URL and it should open an new browser tab with your site - the overview page. This is a quick list of all the image sets the application created.
 
