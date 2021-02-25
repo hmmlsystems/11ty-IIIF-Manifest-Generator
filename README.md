@@ -24,7 +24,7 @@ First you need the Node and NPM applications. These can both be installed via th
 
 <img src="/src/docs/node-npm.png" alt="node and npm" width="400"/>
 
-Next, download the ZIP of this [Github repository](). If you are adept at Git, you could also clone the repository.
+Next, download the ZIP of this [Github repository](https://github.com/hmmlsystems/11ty-IIIF-Manifest-Generator). If you are adept at Git, you could also clone the repository.
 
 ![download code](/src/docs/download-code-github.png "download code")
 
@@ -38,11 +38,11 @@ Next, download the ZIP of this [Github repository](). If you are adept at Git, y
 
 Next install the application using `npm install`.
 
-<img src="/src/docs/npm-install-1.png" alt="npm installing" width="400"/>
+<img src="/src/docs/npm-install-1.png" alt="npm installing" width="500"/>
 
 > **What is this doing?** Basically, the application needs other things to help it do what it wants to do (11ty and 11ty Image Plugin). With the NPM install command, your computer is going out to the web, getting these programs, and installing them on your computer. They are only being installed to this /src directory and you can see their folders and files in the node_modules directory. You’ll never have to worry about these files but just know that they are there to help build your site.
 
-![npm installed](/src/docs/npm-install-2.png "npm installed")
+<br>![npm installed](/src/docs/npm-install-2.png "npm installed")
 
 <br>With the application installed, you can run `npx @11ty/eleventy` to generate or build your site. You will also see a list of files that 11ty has generated for you.
 
@@ -54,19 +54,19 @@ Next install the application using `npm install`.
 
 <br>To view your site locally, change the `/src/_data/siteURL.json` file to “http://localhost:8080”. Then use the `npx @11ty/eleventy --serve` command. The “-- serve” asks 11ty to also create a webserver in memory so you can see your application.
 
-<img src="/src/docs/11ty-serve-terminal.png" alt="11ty serve terminal" width="400"/>
+<img src="/src/docs/11ty-serve-terminal.png" alt="11ty serve terminal" width="500"/>
 
 <br>And here is the application.
 
 <img src="/src/docs/11ty-serve-browser.png" alt="11ty serve browser" width="400"/>
 
-FYI, to quit the 11ty serve command, press control+c in the terminal.
+> FYI, to quit the 11ty serve command, press control+c in the terminal.
 
-Next, login to your Netlify account. Then visit <https://app.netlify.com/drop> and drag your `src/_site` folder into the box in your browser.
+Next, login to your Netlify account. Then visit <https://app.netlify.com/drop> and drag your `src/_site` folder into the 'drop box' in your browser.
 
 ![Netlify Deploy](/src/docs/netlify-deploy.gif "Netlify Deploy")<br><br>
 
-> **What is this doing?** Netlify will publish the static assets that the application created. They will give you a URL and host the pages.
+> **What is this doing?** Netlify will publish the static assets that the application created. This will give you a public website, URL as host the pages and resources.
 
 <br><br>![Netlify Site Deploy](/src/docs/netlify-deploy-site.png "Netlify Site Deploy")
 
@@ -76,21 +76,21 @@ Next, login to your Netlify account. Then visit <https://app.netlify.com/drop> a
 
 <br>Next, click the "Change site name" button.<br>
 
-<img src="/src/docs/change-site-name.png" alt="Change site name" width="200"/>
+<img src="/src/docs/change-site-name.png" alt="Change site name" width="400"/>
 
 <br>Save, and you should have your new site URL.<br>
 
 ![New Site Name](/src/docs/new-site-name.png "New Site Name")
 
-<br>Because the IIIF manifest needs the new URL to work, and in order for our website to work, we need to take this new URL and put it in as the siteURL. This will make sure that the application knows where it lives on the web.<br>
+<br>Because the IIIF manifest needs the entire new URL to work, and in order for our website to work, we need to take this new URL and put it in as the siteURL. This will make sure that the application knows where it lives on the web. Update `_data/siteURL.json`<br>
 
-<img src="/src/docs/siteURL.png" alt="siteURL" width="200"/>
+<img src="/src/docs/siteURL.png" alt="siteURL" width="400"/>
 
-<br>Now, rebuild your site (`npx @11ty/eleventy`) and deploy again. To deploy this time, click the deploy option in your menu and drag your `src/_site` folder into the box in your browser.<br>
+<br>Now, rebuild your site locally (`npx @11ty/eleventy`) and deploy again. To deploy this time, click the **Deploys** option in your menu and drag your `src/_site` folder into the 'drop box' in your browser.<br>
 
 ![Netlify Deploys for existing site](/src/docs/site-deploys-option.png "Netlify Deploys for existing site")
 
-<br>Once the site has been built and processed, click on the site URL and it should open an new browser tab with your site - the overview page. This is a quick list of all the image sets the application created.
+<br>Once the site has been built and processed, click on the site URL and it should open an new browser tab with your site (the overview page). This is a quick list of all the image sets the application created.
 
 You can open the Mirador page (click on the single Mirador link) or even send the link to friends, students, or scholars. The manifest URL can also be used elsewhere but only in Mirador 3 viewers. For example, [Mirador par Biblissima](https://iiif.biblissima.fr/mirador3/?theme=light) or
 [Project Mirador](https://mirador-dev.netlify.app/__tests__/integration/mirador/)
