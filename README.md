@@ -1,10 +1,22 @@
 # 11ty IIIF Manifest Generator
 
-MENU HERE???
+##### TL;DR
+##### Description
+##### Requirements
+##### Assumptions
+##### Installation
+##### Adding your own images
+##### Cleanup
+##### Gotchas
+##### Other information
 
 ## TL;DR
 Too busy to read? Here are some simple instructions to get started.
-In bulleted list. Add a folder with your images, describe them, build, deploy.
+- Install Node and NPM
+- Download the code
+- Install the application
+- Build the site
+- Use Netlify Depoloy to deploy the site
 
 ## Description
 Using this program and the below process, you can generate a IIIF manifest (Level 0) for an image or images, deploy them to the web, and share or use around the web. All without deploying your own [IIIF Image Server](https://iiif.io/apps-demos/#image-servers).  
@@ -97,13 +109,13 @@ You can open the Mirador page (click on the single Mirador link) or even send th
 
 ## Adding your own images
 
-To add your own image file(s), first begin by creating a folder under `/src/images/`. Make sure its URL friendly with no spaces or special characters. Then copy the `index.html` from the `full` folder and paste it in this directory. Finally, add your image file(s).
+To add your own image file(s), first begin by creating a folder under `/src/images/`. Make sure it is URL friendly with no spaces or special characters. Then copy the `index.html` from the `full` folder and paste it in this directory. Finally, add your image file(s).
 
-<img style="border: 3px solid black;" src="/src/docs/add-folder-image-file.png" alt="Add folder" width="400"/>
+<img style="border: 3px solid black;" src="/src/docs/add-folder-image-file.png" alt="Add folder" width="800"/>
 
 Next, open the index.html file in edit mode (try using [Atom](https://atom.io/)) from your new folder. In this file, you will describe your image(s) so that the application can build the manifest etc.
 
-<img style="border: 3px solid black;" src="/src/docs/index-file-contents.png" alt="Index file" width="400"/>
+<img style="border: 3px solid black;" src="/src/docs/index-file-contents.png" alt="Index file" width="800"/>
 
 The full list of possible options may be overwhelming but really there are only a few required fields to get you started.
 
@@ -119,9 +131,13 @@ The full list of possible options may be overwhelming but really there are only 
 | logo | A logo that will be displayed as part of the manifest | NO |
 | viewingDirection | The direction the images will be displayed | NO |
 
-Try use all, some, or just remove everything except for the required fields. You'll need to leave the first 2 lines which are used by the application. Change the folder name to match yours, and change the image(s) array/list to match your image file(s) names.
+Try using all, some, or just remove everything except for the required fields. You'll need to leave the first 2 lines which are used by the application. Change the folder name to match yours, and change the image(s) array/list to match your image file(s) names.
 
-With this saved, do a build and then deploy your application to see your images and manifest.
+With this saved, do a build and then deploy your application to see your images and manifests.
+
+## Cleanup
+
+Once you have a folder with image file(s) working, feel free to remove the `single`, `multiple`, and `full` folders. They are only there as examples to get you up and running.
 
 ## Gotchas
 
