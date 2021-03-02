@@ -1,14 +1,14 @@
 # 11ty IIIF Manifest Generator
 
 [TL;DR](#tldr)<br>
-[Description](https://duckduckgo.com)<br>
-[Requirements](https://duckduckgo.com)<br>
-[Assumptions](https://duckduckgo.com)<br>
-[Installation](https://duckduckgo.com)<br>
-[Adding your own images](https://duckduckgo.com)<br>
-[Cleanup](https://duckduckgo.com)<br>
-[Gotchas](https://duckduckgo.com)<br>
-[Other information](https://duckduckgo.com)<br>
+[Description](#description)<br>
+[Requirements](#requirements)<br>
+[Assumptions](#assumptions)<br>
+[Installation](#installation)<br>
+[Adding your own images](#adding-your-own-images)<br>
+[Cleanup](#cleanup)<br>
+[Gotchas](#gotchas)<br>
+[Other information](#other-information)<br>
 
 ## TL;DR
 Too busy to read? Here are some simple instructions to get started.
@@ -139,6 +139,8 @@ With this saved, do a build and then deploy your application to see your images 
 
 Once you have a folder with image file(s) working, feel free to remove the `single`, `multiple`, and `full` folders. They are only there as examples to get you up and running.
 
+Remember that if you want to deploy another set of image file(s) in the future, you can just reinstall and setup a new site for those. The previous site's images stay ‘minted’ and you won’t continue to build and deploy a bigger and bigger distribution of image files.
+
 ## Gotchas
 
 - You can’t have : or colons in your text. Because the system uses a YAML format, these aren’t allowed. Unless in quotes.
@@ -164,24 +166,10 @@ Once you have a folder with image file(s) working, feel free to remove the `sing
 
 **What’s the netlify.toml file doing?** This file allows other sites to see and use your manifest files. It has to do with CORS. Basically, most websites try to protect their content by not letting others use it. In our case, we want them to use it. If you want you can read more about [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) or the [netlify.toml file](https://docs.netlify.com/configure-builds/file-based-configuration/#headers).
 
-
 ------------------
-
 
 Add ability to theme? light/dark? primary color?
 
-add checks for blank. assume people will just blank out values
-
 Mac and Windows install and run screen prints. for node and building application
-
-For the first deploy we don't know the siteURL. Do a deploy, Gif of dragging _site folder into Netlify. This will give you a new URL. Want to change it? Tweek it now under x, x, x. With this new url, copy it and put it into your siteURL.json file (no / at the end). Rebuild your site, re-deploy your site (go to Deploys and drag _site folder) and then open your website!
-
-Breakdown full file what each value can be.
-
-Explain what each file is doing
-
-Ability to add department ico/image (load in https://mirador-dev.netlify.app/__tests__/integration/mirador/ - don't see logo)
-
-Want to deploy another site or set of manifest. Just reinstall and setup a new site for those. The previous ones stay ‘minted’ and you won’t continue to build and deploy a bigger and bigger distribution of files.
 
 Make repo public!
