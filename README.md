@@ -1,22 +1,22 @@
 # 11ty IIIF Manifest Generator
 
-##### TL;DR
-##### Description
-##### Requirements
-##### Assumptions
-##### Installation
-##### Adding your own images
-##### Cleanup
-##### Gotchas
-##### Other information
+[TL;DR](https://duckduckgo.com)
+[Description](https://duckduckgo.com)
+[Requirements](https://duckduckgo.com)
+[Assumptions](https://duckduckgo.com)
+[Installation](https://duckduckgo.com)
+[Adding your own images](https://duckduckgo.com)
+[Cleanup](https://duckduckgo.com)
+[Gotchas](https://duckduckgo.com)
+[Other information](https://duckduckgo.com)
 
 ## TL;DR
 Too busy to read? Here are some simple instructions to get started.
-- Install Node and NPM
+- Install Node and NPM [Nodejs.org LTS installation](https://nodejs.org/en/)
 - Download the code
-- Install the application
-- Build the site
-- Use Netlify Depoloy to deploy the site
+- Install the application `npm install`
+- Build the site `npx @11ty/eleventy`
+- Use [Netlify Deploy](https://app.netlify.com/drop) to deploy the site 
 
 ## Description
 Using this program and the below process, you can generate a IIIF manifest (Level 0) for an image or images, deploy them to the web, and share or use around the web. All without deploying your own [IIIF Image Server](https://iiif.io/apps-demos/#image-servers).  
