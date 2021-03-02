@@ -146,31 +146,22 @@ Remember that if you want to deploy another set of image file(s) in the future, 
 ## Gotchas
 
 - You can’t have : or colons in your text. Because the system uses a YAML format, these aren’t allowed. Unless in quotes.
-<image>
 
 - Quotes can also cause a problem, especially if you have quotes within quotes. In many cases substituting or eliminating quotes will help.
-
-<image>
 
 - Currently the application works with JPG image files only.
 
 - Folder names and image names should be URL friendly
 
-<image this not this>
-
 - Subfolders aren't allowed. Keep your folders under the /images folder
 
-<image this not this>
-
-- Not seeing your changes? Make sure you save your files, re-compile (generate) your site, and then deploy.
+- Not seeing your changes? Make sure you save your files, re-compile (generate) your site, and then re-deploy.
 
 ## Other information
 
 **What’s the netlify.toml file doing?** This file allows other sites to see and use your manifest files. It has to do with CORS. Basically, most websites try to protect their content by not letting others use it. In our case, we want them to use it. If you want you can read more about [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) or the [netlify.toml file](https://docs.netlify.com/configure-builds/file-based-configuration/#headers).
 
 ------------------
-
-Add ability to theme? light/dark? primary color?
 
 Mac and Windows install and run screen prints. for node and building application
 
