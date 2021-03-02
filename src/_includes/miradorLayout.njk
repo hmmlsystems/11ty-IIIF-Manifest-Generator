@@ -20,18 +20,49 @@ title: Mirador Viewer
         windows: [{
           loadedManifest: '{{siteURL}}/images/{{folder}}/manifest.json',
         }],
-        selectedTheme:'light',
+        selectedTheme:'{%- if miradorTheme and miradorTheme != "" -%}{{miradorTheme}}{% else %}light{%- endif -%}',
         themes: {
-           light: {
-             palette: {
-               type: 'light',
-               primary: {
-                 main: '#db2845',
-               },
-             },
-           },
+          dark: {
+            palette: {
+              type: 'dark',
+              primary: {
+                main: '{%- if miradorPrimary and miradorPrimary != "" -%}{{miradorPrimary}}{% else %}#db2845{%- endif -%}',
+              },
+            },
+          },
+          light: {
+            palette: {
+              type: 'light',
+              primary: {
+                main: '{%- if miradorPrimary and miradorPrimary != "" -%}{{miradorPrimary}}{% else %}#db2845{%- endif -%}',
+              },
+            },
+          },
         }
       });
     </script>
   </body>
 </html>
+var miradorInstance = Mirador.viewer({
+  id: 'mirador',
+  themes: {
+    dark: {
+      palette: {
+        type: 'dark',
+        primary: {
+          main: '#ba55d3',
+        },
+      },
+    },
+    light: {
+      palette: {
+        type: 'light',
+        primary: {
+          main: '#ba55d3',
+        },
+      },
+    },
+  },
+});
+if no selected theme then default
+if no selected color then default

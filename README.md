@@ -130,6 +130,8 @@ The full list of possible options may be overwhelming but really there are only 
 | rights | Rights statement for your image file(s) | NO |
 | logo | A logo that will be displayed as part of the manifest | NO |
 | viewingDirection | The direction the images will be displayed | NO |
+| miradorTheme | The color of the Mirador Viewer | NO |
+| miradorPrimary | The primary accent color for the Mirador Viewer | NO |
 
 Try using all, some, or just remove everything except for the required fields. You'll need to leave the first 2 lines which are used by the application. Change the folder name to match yours, and change the image(s) array/list to match your image file(s) names.
 
