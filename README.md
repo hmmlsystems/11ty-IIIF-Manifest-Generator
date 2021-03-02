@@ -1,14 +1,14 @@
 # 11ty IIIF Manifest Generator
 
-[TL;DR](https://duckduckgo.com)
-[Description](https://duckduckgo.com)
-[Requirements](https://duckduckgo.com)
-[Assumptions](https://duckduckgo.com)
-[Installation](https://duckduckgo.com)
-[Adding your own images](https://duckduckgo.com)
-[Cleanup](https://duckduckgo.com)
-[Gotchas](https://duckduckgo.com)
-[Other information](https://duckduckgo.com)
+[TL;DR](#tldr)<br>
+[Description](https://duckduckgo.com)<br>
+[Requirements](https://duckduckgo.com)<br>
+[Assumptions](https://duckduckgo.com)<br>
+[Installation](https://duckduckgo.com)<br>
+[Adding your own images](https://duckduckgo.com)<br>
+[Cleanup](https://duckduckgo.com)<br>
+[Gotchas](https://duckduckgo.com)<br>
+[Other information](https://duckduckgo.com)<br>
 
 ## TL;DR
 Too busy to read? Here are some simple instructions to get started.
@@ -16,7 +16,7 @@ Too busy to read? Here are some simple instructions to get started.
 - Download the code
 - Install the application `npm install`
 - Build the site `npx @11ty/eleventy`
-- Use [Netlify Deploy](https://app.netlify.com/drop) to deploy the site 
+- Use [Netlify Drop](https://app.netlify.com/drop) to deploy the site
 
 ## Description
 Using this program and the below process, you can generate a IIIF manifest (Level 0) for an image or images, deploy them to the web, and share or use around the web. All without deploying your own [IIIF Image Server](https://iiif.io/apps-demos/#image-servers).  
@@ -141,24 +141,24 @@ Once you have a folder with image file(s) working, feel free to remove the `sing
 
 ## Gotchas
 
-You can’t have : or colons in your text. Because the system uses a YAML format, these aren’t allowed. Unless in quotes.
+- You can’t have : or colons in your text. Because the system uses a YAML format, these aren’t allowed. Unless in quotes.
 <image>
 
-Quotes can also cause a problem, especially if you have quotes within quotes. In many cases substituting or eliminating quotes will help.
+- Quotes can also cause a problem, especially if you have quotes within quotes. In many cases substituting or eliminating quotes will help.
 
 <image>
 
-Currently the application works with JPG image files only.
+- Currently the application works with JPG image files only.
 
-Folder names and image names should be URL friendly
+- Folder names and image names should be URL friendly
 
 <image this not this>
 
-Subfolders aren't allowed. Keep your folders under the /images folder
+- Subfolders aren't allowed. Keep your folders under the /images folder
 
 <image this not this>
 
-Not seeing your changes? Make sure you save your files, re-compile (generate) your site, and then deploy.
+- Not seeing your changes? Make sure you save your files, re-compile (generate) your site, and then deploy.
 
 ## Other information
 
