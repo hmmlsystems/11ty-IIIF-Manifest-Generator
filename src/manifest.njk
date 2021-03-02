@@ -9,16 +9,24 @@ permalink: "images/{{manifest.data.folder}}/manifest.json"
   "@context": "https://iiif.io/api/presentation/2/context.json",
   "@id": "{{siteURL}}/images/{{manifest.data.folder}}/manifest.json",
   "@type": "sc:Manifest",
-  "label": "{{manifest.data.label}}",
-  "metadata": [
-    {
-      "label": "Description",
-      "value": "<span>{{manifest.data.description | safe}}</span>"
-    }
-  ],
-  "rights": "{{manifest.data.rights}}",
-  "logo": "https://vhmml.org/static/img/hmml-logo.png",
-  "viewingDirection": "left-to-right",
+  "label": "{%- if manifest.data.label and manifest.data.label != "" -%}{{manifest.data.label}}{% else %}Image Viewer{%- endif -%}",
+  {%- if manifest.data.description and manifest.data.description != "" -%}
+    "metadata": [
+      {
+        "label": "Description",
+        "value": "<span>{{manifest.data.description | safe}}</span>"
+      }
+    ],
+  {%- endif -%}
+  {%- if manifest.data.rights and manifest.data.rights != "" -%}
+    "rights": "{{manifest.data.rights}}",
+  {%- endif -%}
+  {%- if manifest.data.logo and manifest.data.logo != "" -%}
+    "logo": "{{manifest.data.logo}}",
+  {%- endif -%}
+  {%- if manifest.data.viewingDirection and manifest.data.viewingDirection != "" -%}
+    "viewingDirection": "{{manifest.data.viewingDirection}}",
+  {%- endif -%}
   "sequences": [
     {
       "@id": "{{siteURL}}/sequence/1",
@@ -30,7 +38,12 @@ permalink: "images/{{manifest.data.folder}}/manifest.json"
           "@type": "sc:Canvas",
           "label": "{{image}}",
           {% if siteURL != "https://yoururl.netlify.app" %}
-            {% imageGen "./images/"+manifest.data.folder+"/"+image, manifest.data.folder, manifest.data.label %}
+            {%- if manifest.data.label and manifest.data.label != "" -%}
+              {% set manifestLabel = manifest.data.label %}
+            {% else %}
+              {% set manifestLabel = "Image Viewer" %}
+            {%- endif -%}
+            {% imageGen "./images/"+manifest.data.folder+"/"+image, manifest.data.folder, manifestLabel %}
           {%- endif -%}
           "images": [
             {

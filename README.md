@@ -22,7 +22,7 @@ We’re assuming you know what [IIIF](https://iiif.io/) is and why you may want 
 ## Installation
 First you need the Node and NPM applications. These can both be installed via the [Nodejs.org LTS installation](https://nodejs.org/en/). Follow the installation instructions. Once installed, confirm that they are working by asking your computer what version of Node and NPM you have (`node -v` and `npm -v`). If it is able to tell you a version, they are installed correctly.
 
-<img src="/src/docs/node-npm.png" alt="node and npm" width="400"/>
+<img style="border: 3px solid black;" src="/src/docs/node-npm.png" alt="node and npm" width="400"/>
 
 Next, download the ZIP of this [Github repository](https://github.com/hmmlsystems/11ty-IIIF-Manifest-Generator). If you are adept at Git, you could also clone the repository.
 
@@ -30,15 +30,15 @@ Next, download the ZIP of this [Github repository](https://github.com/hmmlsystem
 
 <br>Extract or unzip the download file.
 
-<img src="/src/docs/extract-download.png" alt="extract download" width="300"/>
+<img style="border: 3px solid black;" src="/src/docs/extract-download.png" alt="extract download" width="300"/>
 
 <br>In Terminal, navigate to the `/11ty-IIIF-Manifest-Generator/src/` directory.
 
-<img src="/src/docs/terminal-src.png" alt="terminal" width="400"/>
+<img style="border: 3px solid black;" src="/src/docs/terminal-src.png" alt="terminal" width="400"/>
 
 Next install the application using `npm install`.
 
-<img src="/src/docs/npm-install-1.png" alt="npm installing" width="500"/>
+<img style="border: 3px solid black;" src="/src/docs/npm-install-1.png" alt="npm installing" width="500"/>
 
 > **What is this doing?** Basically, the application needs other things to help it do what it wants to do (11ty and 11ty Image Plugin). With the NPM install command, your computer is going out to the web, getting these programs, and installing them on your computer. They are only being installed to this /src directory and you can see their folders and files in the node_modules directory. You’ll never have to worry about these files but just know that they are there to help build your site.
 
@@ -46,7 +46,7 @@ Next install the application using `npm install`.
 
 <br>With the application installed, you can run `npx @11ty/eleventy` to generate or build your site. You will also see a list of files that 11ty has generated for you.
 
-<img src="/src/docs/run-11ty.png" alt="build site with 11ty" width="400"/>
+<img style="border: 3px solid black;" src="/src/docs/run-11ty.png" alt="build site with 11ty" width="400"/>
 
 > **What is this doing?** This command is asking 11ty to build your site from the files that are already in the project. The application is ‘seeded’ with 3 examples: a single image, multiple images, and a fully detailed with multiple images example. For reference, you can find these in the `/src/images/` folder.
 >
@@ -54,11 +54,11 @@ Next install the application using `npm install`.
 
 <br>To view your site locally, change the `/src/_data/siteURL.json` file to “http://localhost:8080”. Then use the `npx @11ty/eleventy --serve` command. The “-- serve” asks 11ty to also create a webserver in memory so you can see your application.
 
-<img src="/src/docs/11ty-serve-terminal.png" alt="11ty serve terminal" width="500"/>
+<img style="border: 3px solid black;" src="/src/docs/11ty-serve-terminal.png" alt="11ty serve terminal" width="500"/>
 
 <br>And here is the application.
 
-<img src="/src/docs/11ty-serve-browser.png" alt="11ty serve browser" width="400"/>
+<img style="border: 3px solid black;" src="/src/docs/11ty-serve-browser.png" alt="11ty serve browser" width="400"/>
 
 > FYI, to quit the 11ty serve command, press control+c in the terminal.
 
@@ -76,7 +76,7 @@ Next, login to your Netlify account. Then visit <https://app.netlify.com/drop> a
 
 <br>Next, click the "Change site name" button.<br>
 
-<img src="/src/docs/change-site-name.png" alt="Change site name" width="400"/>
+<img style="border: 3px solid black;" src="/src/docs/change-site-name.png" alt="Change site name" width="400"/>
 
 <br>Save, and you should have your new site URL.<br>
 
@@ -84,7 +84,7 @@ Next, login to your Netlify account. Then visit <https://app.netlify.com/drop> a
 
 <br>Because the IIIF manifest needs the entire new URL to work, and in order for our website to work, we need to take this new URL and put it in as the siteURL. This will make sure that the application knows where it lives on the web. Update `_data/siteURL.json`<br>
 
-<img src="/src/docs/siteURL.png" alt="siteURL" width="400"/>
+<img style="border: 3px solid black;" src="/src/docs/siteURL.png" alt="siteURL" width="400"/>
 
 <br>Now, rebuild your site locally (`npx @11ty/eleventy`) and deploy again. To deploy this time, click the **Deploys** option in your menu and drag your `src/_site` folder into the 'drop box' in your browser.<br>
 
@@ -97,29 +97,31 @@ You can open the Mirador page (click on the single Mirador link) or even send th
 
 ## Adding your own images
 
-To add your own image file(s), first begin by creating a folder under `/src/images/`. Make sure its URL friendly with no spaces or special characters. Then copy the `index.html` from the `full` directory and paste it in this directory.
+To add your own image file(s), first begin by creating a folder under `/src/images/`. Make sure its URL friendly with no spaces or special characters. Then copy the `index.html` from the `full` folder and paste it in this directory. Finally, add your image file(s).
 
-<image>
+<img style="border: 3px solid black;" src="/src/docs/add-folder-image-file.png" alt="Add folder" width="400"/>
 
-Copy the index.html from the full directory and paste it in this directory.
+Next, open the index.html file in edit mode (try using [Atom](https://atom.io/)) from your new folder. In this file, you will describe your image(s) so that the application can build the manifest etc.
 
-<image>
-
-Also paste in your image file(s).
-
-<image>
-
-Next, open the index.html file in edit mode (use [Atom](https://atom.io/)) from your new folder. In this file is where you will describe your image(s) so that the application can build the manifest etc.
-
-<image>
+<img style="border: 3px solid black;" src="/src/docs/index-file-contents.png" alt="Index file" width="400"/>
 
 The full list of possible options may be overwhelming but really there are only a few required fields to get you started.
 
-<TABLE OF LIST AND WHAT THEY DO AND IF REQUIRED>
+| Field | Description | Required |
+| --- | ----------- | -------- |
+| layout | This tells 11ty what template to use. DO NOT CHANGE. | YES |
+| tags | This helps 11ty parse your content. DO NOT CHANGE. | YES |
+| folder | The name of the folder where this file resides | YES |
+| images | An array of your image file(s) | YES |
+| label | The label that will appear in the upper left of the Mirador 3 Viewer | NO |
+| description | A description that will be in the manifest | NO |
+| rights | Rights statement for your image file(s) | NO |
+| logo | A logo that will be displayed as part of the manifest | NO |
+| viewingDirection | The direction the images will be displayed | NO |
 
-Try some or just remove everything except for the required fields. You'll need to leave the first 2 lines which are used by the application. Change the folder name to match yours, and change the image(s) list to match your image file(s).
+Try use all, some, or just remove everything except for the required fields. You'll need to leave the first 2 lines which are used by the application. Change the folder name to match yours, and change the image(s) array/list to match your image file(s) names.
 
-With this saved, do a build and then serve your application to see your images and manifest.
+With this saved, do a build and then deploy your application to see your images and manifest.
 
 ## Gotchas
 

@@ -1,6 +1,12 @@
 <h1>11ty IIIF Manifest Generator</h1>
 {%- for imageFile in collections.manifestGenerator -%}
   <h3>{{ imageFile.data.folder }}</h3>
+  {%- if imageFile.data.label and imageFile.data.label != "" -%}
+    <p>Label: {{imageFile.data.label}}</p>
+  {%- endif -%}
+  {%- if imageFile.data.description and imageFile.data.description != "" -%}
+    <p>Description: {{imageFile.data.description}}</p>
+  {%- endif -%}
   <ul>{%- if imageFile.data.folder and imageFile.data.folder != "" -%}
     <li>Mirador: <a href="images/{{ imageFile.data.folder }}/">{{siteURL}}/images/{{ imageFile.data.folder }}</a></li>
     <li>Manifest: <a href="images/{{ imageFile.data.folder }}/manifest.json">{{siteURL}}/images/{{ imageFile.data.folder }}/manifest.json</a></li>
