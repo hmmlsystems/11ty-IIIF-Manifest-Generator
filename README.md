@@ -40,7 +40,7 @@ On a Windows PC, make sure you run PowerShell as an Administrator.
 
 <img src="/src/docs/node-npm.png" alt="node and npm" width="400"/>
 
-Check Node and NPM:
+Windows check Node and NPM:
 
 <img src="/src/docs/node-npm-windows-new.JPG" alt="node and npm" width="200"/>
 
@@ -53,6 +53,8 @@ Next, download the ZIP of this [Github repository](https://github.com/hmmlsystem
 <br>Extract or unzip the download file.
 
 <img src="/src/docs/extract-download.png" alt="extract download" width="300"/>
+
+On Windows:<br>
 <img src="/src/docs/zip-extract-windows.JPG" alt="extract download" width="500"/>
 
 <br>In Terminal, navigate to the `/11ty-IIIF-Manifest-Generator/src/` directory.
@@ -64,7 +66,7 @@ Next install the application using `npm install`.
 
 <img src="/src/docs/npm-install-1.png" alt="npm installing" width="500"/>
 
-On Windows:
+On Windows:<br>
 <img src="/src/docs/npm-install-new.JPG" alt="npm installing Windows" width="500"/>
 
 > **What is this doing?** Basically, the application needs other things to help it do what it wants to do (11ty and 11ty Image Plugin). With the NPM install command, your computer is going out to the web, getting these programs, and installing them on your computer. They are only being installed to this /src directory and you can see their folders and files in the node_modules directory. You’ll never have to worry about these files but just know that they are there to help build your site.
@@ -76,8 +78,7 @@ On Windows:
 
 <img src="/src/docs/run-11ty.png" alt="build site with 11ty" width="400"/>
 
-On Windows:
-
+On Windows:<br>
 <img src="/src/docs/11ty-run.JPG" alt="build site with 11ty Windows" width="500"/>
 
 > **What is this doing?** This command is asking 11ty to build your site from the files that are already in the project. The application is ‘seeded’ with 3 examples: a single image, multiple images, and a fully detailed with multiple images example. For reference, you can find these in the `/src/images/` folder.
@@ -90,7 +91,7 @@ On Windows:
 
 <img src="/src/docs/11ty-serve-terminal.png" alt="11ty serve terminal" width="500"/>
 
-Or on Windows:
+Or on Windows:<br>
 <img src="/src/docs/11ty-serve.JPG" alt="11ty serve terminal Windows" width="500"/>
 
 <br>And here is the application.
