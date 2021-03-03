@@ -94,14 +94,14 @@ To view your site locally, change the `/src/_data/siteURL.json` file to “http:
 Or on Windows:<br>
 <img src="/src/docs/11ty-serve.JPG" alt="11ty serve terminal Windows" width="500"/>
 
-<br>Open your favorite browser and open <a target="_blank" href="http://localhost:8080">http://localhost:8080</a>.
+<br>Open your favorite browser and view <a href="http://localhost:8080">http://localhost:8080</a>.
 
 <img src="/src/docs/11ty-serve-browser.png" alt="11ty serve browser" width="400"/>
 
 > FYI, to quit the 11ty serve command, press control+c in the terminal.
 
 ### Deploy to Netlify
-Next, login to your <a target="_blank" href="https://app.netlify.com">Netlify account</a>. Then visit <https://app.netlify.com/drop> and drag your `src/_site` folder into the 'drop box' in your browser.
+Next, login to your <a href="https://app.netlify.com">Netlify account</a>. Then visit <https://app.netlify.com/drop> and drag your `src/_site` folder into the 'drop box' in your browser.
 
 ![Netlify Deploy](/src/docs/netlify-deploy.gif "Netlify Deploy")<br><br>
 
