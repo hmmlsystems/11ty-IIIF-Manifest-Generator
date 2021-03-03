@@ -34,7 +34,12 @@ We’re assuming you know what [IIIF](https://iiif.io/) is and why you may want 
 ## Installation
 First you need the Node and NPM applications. These can both be installed via the [Nodejs.org LTS installation](https://nodejs.org/en/). Follow the installation instructions. Once installed, confirm that they are working by asking your computer what version of Node and NPM you have (`node -v` and `npm -v`). If it is able to tell you a version, they are installed correctly.
 
-<img style="border: 3px solid black;" src="/src/docs/node-npm.png" alt="node and npm" width="400"/>
+<img src="/src/docs/node-npm.png" alt="node and npm" width="400"/>
+
+On a Windows PC, make sure you run PowerShell as an Administrator.
+
+<img src="/src/docs/node-npm.png" alt="node and npm" width="400"/>
+<img src="/src/docs/node-npm-windows-new.JPG" alt="node and npm" width="400"/>
 
 Next, download the ZIP of this [Github repository](https://github.com/hmmlsystems/11ty-IIIF-Manifest-Generator). If you are adept at Git, you could also clone the repository.
 
@@ -42,15 +47,18 @@ Next, download the ZIP of this [Github repository](https://github.com/hmmlsystem
 
 <br>Extract or unzip the download file.
 
-<img style="border: 3px solid black;" src="/src/docs/extract-download.png" alt="extract download" width="300"/>
+<img src="/src/docs/extract-download.png" alt="extract download" width="300"/>
+
+<img src="/src/docs/zip-extract-windows.png" alt="extract download" width="300"/>
 
 <br>In Terminal, navigate to the `/11ty-IIIF-Manifest-Generator/src/` directory.
 
-<img style="border: 3px solid black;" src="/src/docs/terminal-src.png" alt="terminal" width="400"/>
+<img src="/src/docs/terminal-src.png" alt="terminal" width="400"/>
 
 Next install the application using `npm install`.
 
-<img style="border: 3px solid black;" src="/src/docs/npm-install-1.png" alt="npm installing" width="500"/>
+<img src="/src/docs/npm-install-1.png" alt="npm installing" width="500"/>
+<img src="/src/docs/npm-install-new.JPG" alt="npm installing Windows" width="500"/>
 
 > **What is this doing?** Basically, the application needs other things to help it do what it wants to do (11ty and 11ty Image Plugin). With the NPM install command, your computer is going out to the web, getting these programs, and installing them on your computer. They are only being installed to this /src directory and you can see their folders and files in the node_modules directory. You’ll never have to worry about these files but just know that they are there to help build your site.
 
@@ -58,7 +66,8 @@ Next install the application using `npm install`.
 
 <br>With the application installed, you can run `npx @11ty/eleventy` to generate or build your site. You will also see a list of files that 11ty has generated for you.
 
-<img style="border: 3px solid black;" src="/src/docs/run-11ty.png" alt="build site with 11ty" width="400"/>
+<img src="/src/docs/run-11ty.png" alt="build site with 11ty" width="400"/>
+<img src="/src/docs/11ty-run.JPG" alt="build site with 11ty Windows" width="400"/>
 
 > **What is this doing?** This command is asking 11ty to build your site from the files that are already in the project. The application is ‘seeded’ with 3 examples: a single image, multiple images, and a fully detailed with multiple images example. For reference, you can find these in the `/src/images/` folder.
 >
@@ -66,11 +75,12 @@ Next install the application using `npm install`.
 
 <br>To view your site locally, change the `/src/_data/siteURL.json` file to “http://localhost:8080”. Then use the `npx @11ty/eleventy --serve` command. The “-- serve” asks 11ty to also create a webserver in memory so you can see your application.
 
-<img style="border: 3px solid black;" src="/src/docs/11ty-serve-terminal.png" alt="11ty serve terminal" width="500"/>
+<img src="/src/docs/11ty-serve-terminal.png" alt="11ty serve terminal" width="500"/>
+<img src="/src/docs/11ty-serve.JPG" alt="11ty serve terminal Windows" width="500"/>
 
 <br>And here is the application.
 
-<img style="border: 3px solid black;" src="/src/docs/11ty-serve-browser.png" alt="11ty serve browser" width="400"/>
+<img src="/src/docs/11ty-serve-browser.png" alt="11ty serve browser" width="400"/>
 
 > FYI, to quit the 11ty serve command, press control+c in the terminal.
 
@@ -162,7 +172,5 @@ Remember that if you want to deploy another set of image file(s) in the future, 
 **What’s the netlify.toml file doing?** This file allows other sites to see and use your manifest files. It has to do with CORS. Basically, most websites try to protect their content by not letting others use it. In our case, we want them to use it. If you want you can read more about [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) or the [netlify.toml file](https://docs.netlify.com/configure-builds/file-based-configuration/#headers).
 
 ------------------
-
-Mac and Windows install and run screen prints. for node and building application
 
 Make repo public!
