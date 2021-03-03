@@ -57,7 +57,7 @@ Next, download the ZIP of this [Github repository](https://github.com/hmmlsystem
 On Windows:<br>
 <img src="/src/docs/zip-extract-windows.JPG" alt="extract download" width="500"/>
 
-<br>In Terminal, navigate to the `/11ty-IIIF-Manifest-Generator/src/` directory.
+<br>In Terminal (Mac) or PowerShell (Windows), navigate to the `/11ty-IIIF-Manifest-Generator/src/` directory.
 
 <img src="/src/docs/terminal-src.png" alt="terminal" width="400"/>
 
@@ -67,14 +67,14 @@ Next install the application using `npm install`.
 <img src="/src/docs/npm-install-1.png" alt="npm installing" width="500"/>
 
 On Windows:<br>
-<img src="/src/docs/npm-install-new.JPG" alt="npm installing Windows" width="500"/>
+<img src="/src/docs/npm-install-new.JPG" alt="npm installing Windows" width="600"/>
 
 > **What is this doing?** Basically, the application needs other things to help it do what it wants to do (11ty and 11ty Image Plugin). With the NPM install command, your computer is going out to the web, getting these programs, and installing them on your computer. They are only being installed to this /src directory and you can see their folders and files in the node_modules directory. You’ll never have to worry about these files but just know that they are there to help build your site.
 
 <br>![npm installed](/src/docs/npm-install-2.png "npm installed")
 
 ### 11ty Build
-<br>With the application installed, you can run `npx @11ty/eleventy` to generate or build your site. You will also see a list of files that 11ty has generated for you.
+With the application installed, you can run `npx @11ty/eleventy` to generate or build your site. You will also see a list of files that 11ty has generated for you.
 
 <img src="/src/docs/run-11ty.png" alt="build site with 11ty" width="400"/>
 
@@ -87,21 +87,21 @@ On Windows:<br>
 
 ### 11ty Serve
 
-<br>To view your site locally, change the `/src/_data/siteURL.json` file to “http://localhost:8080”. Then use the `npx @11ty/eleventy --serve` command. The “-- serve” asks 11ty to also create a webserver in memory so you can see your application.
+To view your site locally, change the `/src/_data/siteURL.json` file to “http://localhost:8080”. Then use the `npx @11ty/eleventy --serve` command. The “-- serve” asks 11ty to also create a webserver in memory so you can see your application.
 
 <img src="/src/docs/11ty-serve-terminal.png" alt="11ty serve terminal" width="500"/>
 
 Or on Windows:<br>
 <img src="/src/docs/11ty-serve.JPG" alt="11ty serve terminal Windows" width="500"/>
 
-<br>And here is the application.
+<br>Open your favorite browser and open <a target="_blank" href="http://localhost:8080">http://localhost:8080</a>.
 
 <img src="/src/docs/11ty-serve-browser.png" alt="11ty serve browser" width="400"/>
 
 > FYI, to quit the 11ty serve command, press control+c in the terminal.
 
 ### Deploy to Netlify
-Next, login to your Netlify account. Then visit <https://app.netlify.com/drop> and drag your `src/_site` folder into the 'drop box' in your browser.
+Next, login to your <a target="_blank" href="https://app.netlify.com">Netlify account</a>. Then visit <https://app.netlify.com/drop> and drag your `src/_site` folder into the 'drop box' in your browser.
 
 ![Netlify Deploy](/src/docs/netlify-deploy.gif "Netlify Deploy")<br><br>
 
@@ -129,7 +129,7 @@ Next, login to your Netlify account. Then visit <https://app.netlify.com/drop> a
 
 ![Netlify Deploys for existing site](/src/docs/site-deploys-option.png "Netlify Deploys for existing site")
 
-<br>Once the site has been built and processed, click on the site URL and it should open an new browser tab with your site (the overview page). This is a quick list of all the image sets the application created.
+<br>Once the site has been built and processed by Netlify, click on the site URL and it should open a new browser tab with your site (the overview page). This is a quick list of all the image sets the application created.
 
 You can open the Mirador page (click on the single Mirador link) or even send the link to friends, students, or scholars. The manifest URL can also be used elsewhere but only in Mirador 3 viewers. For example, [Mirador par Biblissima](https://iiif.biblissima.fr/mirador3/?theme=light) or
 [Project Mirador](https://mirador-dev.netlify.app/__tests__/integration/mirador/)
@@ -160,7 +160,7 @@ The full list of possible options may be overwhelming but really there are only 
 | miradorTheme | The color of the Mirador Viewer | NO |
 | miradorPrimary | The primary accent color for the Mirador Viewer | NO |
 
-Try using all, some, or just remove everything except for the required fields. You'll need to leave the first 2 lines which are used by the application. Change the folder name to match yours, and change the image(s) array/list to match your image file(s) names.
+Try using all, some, or just remove everything except the required fields. You'll need to leave the first 2 lines which are used by the application. Change the folder name to match yours, and change the image(s) array/list to match your image file(s) names.
 
 With this saved, do a build and then deploy your application to see your images and manifests.
 
