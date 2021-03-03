@@ -39,30 +39,39 @@ First you need the Node and NPM applications. These can both be installed via th
 On a Windows PC, make sure you run PowerShell as an Administrator.
 
 <img src="/src/docs/node-npm.png" alt="node and npm" width="400"/>
+
+Check Node and NPM:
+
 <img src="/src/docs/node-npm-windows-new.JPG" alt="node and npm" width="200"/>
 
+### Download
 Next, download the ZIP of this [Github repository](https://github.com/hmmlsystems/11ty-IIIF-Manifest-Generator). If you are adept at Git, you could also clone the repository.
 
 ![download code](/src/docs/download-code-github.png "download code")
 
+### Extract
 <br>Extract or unzip the download file.
 
 <img src="/src/docs/extract-download.png" alt="extract download" width="300"/>
-<img src="/src/docs/zip-extract-windows.JPG" alt="extract download" width="300"/>
+<img src="/src/docs/zip-extract-windows.JPG" alt="extract download" width="500"/>
 
 <br>In Terminal, navigate to the `/11ty-IIIF-Manifest-Generator/src/` directory.
 
 <img src="/src/docs/terminal-src.png" alt="terminal" width="400"/>
 
+### NPM Install
 Next install the application using `npm install`.
 
 <img src="/src/docs/npm-install-1.png" alt="npm installing" width="500"/>
+
+On Windows:
 <img src="/src/docs/npm-install-new.JPG" alt="npm installing Windows" width="500"/>
 
 > **What is this doing?** Basically, the application needs other things to help it do what it wants to do (11ty and 11ty Image Plugin). With the NPM install command, your computer is going out to the web, getting these programs, and installing them on your computer. They are only being installed to this /src directory and you can see their folders and files in the node_modules directory. You’ll never have to worry about these files but just know that they are there to help build your site.
 
 <br>![npm installed](/src/docs/npm-install-2.png "npm installed")
 
+### 11ty Build
 <br>With the application installed, you can run `npx @11ty/eleventy` to generate or build your site. You will also see a list of files that 11ty has generated for you.
 
 <img src="/src/docs/run-11ty.png" alt="build site with 11ty" width="400"/>
@@ -74,6 +83,8 @@ On Windows:
 > **What is this doing?** This command is asking 11ty to build your site from the files that are already in the project. The application is ‘seeded’ with 3 examples: a single image, multiple images, and a fully detailed with multiple images example. For reference, you can find these in the `/src/images/` folder.
 >
 > The `npx @11ty/eleventy` command takes the information in each folder’s index.html file and uses it to build the main site’s page with a list of separate image folders, a Mirador 3 Viewer page for each folder, a manifest.json file for each folder, and thumbnails of each image. For reference, you can find the 'compiled' site in the `/src/_site/` folder.
+
+### 11ty Serve
 
 <br>To view your site locally, change the `/src/_data/siteURL.json` file to “http://localhost:8080”. Then use the `npx @11ty/eleventy --serve` command. The “-- serve” asks 11ty to also create a webserver in memory so you can see your application.
 
@@ -88,6 +99,7 @@ Or on Windows:
 
 > FYI, to quit the 11ty serve command, press control+c in the terminal.
 
+### Deploy to Netlify
 Next, login to your Netlify account. Then visit <https://app.netlify.com/drop> and drag your `src/_site` folder into the 'drop box' in your browser.
 
 ![Netlify Deploy](/src/docs/netlify-deploy.gif "Netlify Deploy")<br><br>
