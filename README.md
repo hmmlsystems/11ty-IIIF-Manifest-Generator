@@ -38,7 +38,7 @@ First, you need the Node and NPM applications. These can both be installed via t
 
 On a Windows PC, make sure you run PowerShell as an Administrator.
 
-<img src="/src/docs/node-npm.png" alt="node and npm" width="400"/>
+<img src="/src/docs/windows-run-as-admin.JPG" alt="windows run as admin" width="400"/>
 
 Windows, checking Node and NPM:
 
