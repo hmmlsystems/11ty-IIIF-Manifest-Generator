@@ -1,3 +1,7 @@
+<html>
+<head>
+</head>
+<body style="padding-left:10px;">
 <h1>11ty IIIF Manifest Generator</h1>
 {%- for imageFile in collections.manifestGenerator -%}
   <h3>{{ imageFile.data.folder }}</h3>
@@ -14,3 +18,5 @@
 {%- endfor -%}
 <h2>iFrame code to embed a Mirador Viewer</h2>
 <pre><code>&lt;iframe src="MiradorURL" height="520px" width="100%" title="Image viewer" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen=""&gt;&lt;/iframe&gt;</code></pre>
+</body>
+</html>
